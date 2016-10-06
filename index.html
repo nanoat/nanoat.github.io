@@ -9,19 +9,15 @@
 </head>
  <body>
  
-  <ul class="portfolio">
-    {% for repo in site.github.public_repositories limit:28 %}
+ <li class="repo">
+    <h3><a href="{{ repo.homepage }}">{{ repo.name }}</a></h3>
+    <p>{{ repo.description }}</p>
  
-        {% if repo.fork != true %}
-            <li class="repo">
-               
-                <a href="{{ repo.homepage }}">{{ repo.name }}</a>
-             
-            </li>
-        {% endif %}
- 
-    {% endfor %}
-   </ul>
+    <aside class="details">
+        <span>Stars {{ repo.stargazers_count }}</span>
+        <span>Forks {{ repo.forks_count }}</span>
+    </aside>
+</li>
  
  </body>
 </html>
